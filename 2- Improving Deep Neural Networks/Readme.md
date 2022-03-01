@@ -215,6 +215,7 @@ _**Implementation tip**_: if you implement gradient descent, one of the steps to
 - A lot of researchers are using dropout with Computer Vision (CV) because they have a very big input size and almost never have enough data, so overfitting is the usual problem. And dropout is a regularization technique to prevent overfitting.
 - A downside of dropout is that the cost function J is not well defined and it will be hard to debug (plot J by iteration).
   - To solve that you'll need to turn off dropout, set all the `keep_prob`s to 1, and then run the code and check that it monotonically decreases J and then turn on the dropouts again.
+  -With the inverted dropout technique, at test time: You do not apply dropout (do not randomly eliminate units) and do not keep the 1/keep_prob factor in the calculations used in training.
 
 ### Other regularization methods
 
